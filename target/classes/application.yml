@@ -26,6 +26,9 @@ spring:
     multipart:
       # 大小限制
       max-file-size: 10MB
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
 server:
 #  address: 0.0.0.0
   port: 8101
@@ -44,3 +47,16 @@ mybatis-plus:
       logic-delete-field: isDelete # 全局逻辑删除的实体字段名
       logic-delete-value: 1 # 逻辑已删除值（默认为 1）
       logic-not-delete-value: 0 # 逻辑未删除值（默认为 0）
+
+kongapi:
+  access-key: wangliangxi
+  secret-key: loveu
+dubbo:
+  application:
+    name: kongapi-backend
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    id: nacos-registry
+    address: nacos://localhost:8848

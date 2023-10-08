@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "name": "kongapi",
+      "type": "com.dsk.kongapiclientsdk.KongApiClientConfig",
+      "sourceType": "com.dsk.kongapiclientsdk.KongApiClientConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "kongapi.access-key",
+      "type": "java.lang.String",
+      "sourceType": "com.dsk.kongapiclientsdk.KongApiClientConfig"
+    },
+    {
+      "name": "kongapi.secret-key",
+      "type": "java.lang.String",
+      "sourceType": "com.dsk.kongapiclientsdk.KongApiClientConfig"
+    }
+  ],
+  "hints": []
+}

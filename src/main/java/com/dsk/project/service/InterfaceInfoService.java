@@ -2,7 +2,7 @@ package com.dsk.project.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.dsk.project.model.dto.interfaceinfo.InterfaceInfoQueryRequest;
-import com.dsk.project.model.entity.InterfaceInfo;
+import com.dsk.kongapicommon.model.entity.InterfaceInfo;
 
 /**
 * @author Administrator

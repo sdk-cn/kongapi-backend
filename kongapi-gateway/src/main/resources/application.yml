@@ -1,0 +1,20 @@
+server:
+  port: 9000
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: test_route
+          uri: http://localhost:8103
+          predicates:
+            - Path=/api/**
+dubbo:
+  application:
+    name: gateway
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    id: nacos-registry
+    address: nacos://localhost:8848
+

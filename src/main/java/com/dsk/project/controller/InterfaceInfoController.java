@@ -2,22 +2,23 @@ package com.dsk.project.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.dsk.kongapiclientsdk.client.KongApiClient;
 import com.dsk.project.annotation.AuthCheck;
-import com.dsk.project.common.BaseResponse;
-import com.dsk.project.common.DeleteRequest;
-import com.dsk.project.common.ErrorCode;
-import com.dsk.project.common.ResultUtils;
+import com.dsk.project.common.*;
 import com.dsk.project.constant.CommonConstant;
 import com.dsk.project.constant.UserConstant;
 import com.dsk.project.exception.BusinessException;
 import com.dsk.project.exception.ThrowUtils;
 import com.dsk.project.model.dto.interfaceinfo.InterfaceInfoAddRequest;
+import com.dsk.project.model.dto.interfaceinfo.InterfaceInfoInvokeRequest;
 import com.dsk.project.model.dto.interfaceinfo.InterfaceInfoQueryRequest;
 import com.dsk.project.model.dto.interfaceinfo.InterfaceInfoUpdateRequest;
-import com.dsk.project.model.entity.InterfaceInfo;
-import com.dsk.project.model.entity.User;
+import com.dsk.kongapicommon.model.entity.InterfaceInfo;
+import com.dsk.kongapicommon.model.entity.User;
+import com.dsk.project.model.enums.StatusEnum;
 import com.dsk.project.service.InterfaceInfoService;
 import com.dsk.project.service.UserService;
+import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
@@ -25,10 +26,9 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
 
 /**
- * 帖子接口 */
+ * 接口信息 */
 @RestController
 @RequestMapping("/interfaceInfo")
 @Slf4j
@@ -39,6 +39,9 @@ public class InterfaceInfoController {
 
     @Resource
     private UserService userService;
+
+    @Resource
+    private KongApiClient kongApiClient;
 
     // region 增删改查
 
@@ -115,32 +118,123 @@ public class InterfaceInfoController {
     }
 
     /**
-     * 获取列表（仅管理员可使用）
-     *
-     * @param interfaceInfoQueryRequest
-     * @return
+     * 管理员上线接口
+     * @param idRequest id请求对象
+     * @return Boolean
      */
-    @AuthCheck(mustRole = "admin")
-    @GetMapping("/list")
-    public BaseResponse<List<InterfaceInfo>> listInterfaceInfo(InterfaceInfoQueryRequest interfaceInfoQueryRequest) {
-        InterfaceInfo interfaceInfoQuery = new InterfaceInfo();
-        if (interfaceInfoQueryRequest != null) {
-            BeanUtils.copyProperties(interfaceInfoQueryRequest, interfaceInfoQuery);
+    @PostMapping("/online")
+    @AuthCheck(mustRole = UserConstant.ADMIN_ROLE)
+    public BaseResponse<Boolean> onlineInterfaceInfo(@RequestBody IdRequest idRequest) {
+        if (idRequest == null || idRequest.getId() <= 0) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
-        QueryWrapper<InterfaceInfo> queryWrapper = new QueryWrapper<>(interfaceInfoQuery);
-        List<InterfaceInfo> interfaceInfoList = interfaceInfoService.list(queryWrapper);
-        return ResultUtils.success(interfaceInfoList);
+        //先查询表里有没有这个接口
+        //接口id
+        Long id = idRequest.getId();
+        //利用service查询接口信息
+        InterfaceInfo interfaceInfo = interfaceInfoService.getById(id);
+        //如果接口信息为空，抛出不存在异常
+        if(interfaceInfo==null){
+            throw new BusinessException(ErrorCode.NOT_FOUND_ERROR);
+        }
+        //接着判断接口是否可用，这里需要使用之前开发的sdk客户端
+        com.dsk.kongapiclientsdk.model.User user = new com.dsk.kongapiclientsdk.model.User();
+        user.setUserName("kongkong");
+        String userName = kongApiClient.getUserNameByPost(user);
+        if(StringUtils.isBlank(userName)){
+            throw new BusinessException(ErrorCode.SYSTEM_ERROR,"接口不可调用");
+        }
+        InterfaceInfo newInterfaceInfo = new InterfaceInfo();
+        newInterfaceInfo.setId(id);
+        newInterfaceInfo.setStatus(StatusEnum.OPEN.getStatus());
+        boolean result = interfaceInfoService.updateById(newInterfaceInfo);
+        return ResultUtils.success(result);
+    }
+
+    @PostMapping("/offline")
+    @AuthCheck(mustRole = UserConstant.ADMIN_ROLE)
+    public BaseResponse<Boolean> offlineInterfaceInfo(@RequestBody IdRequest idRequest) {
+        if (idRequest == null || idRequest.getId() <= 0) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        //先查询表里有没有这个接口
+        //接口id
+        Long id = idRequest.getId();
+        //利用service查询接口信息
+        InterfaceInfo interfaceInfo = interfaceInfoService.getById(id);
+        //如果接口信息为空，抛出不存在异常
+        if(interfaceInfo==null){
+            throw new BusinessException(ErrorCode.NOT_FOUND_ERROR);
+        }
+        //接着判断接口是否可用，这里需要使用之前开发的sdk客户端
+        com.dsk.kongapiclientsdk.model.User user = new com.dsk.kongapiclientsdk.model.User();
+        user.setUserName("kongkong");
+        String userName = kongApiClient.getUserNameByPost(user);
+        if(StringUtils.isBlank(userName)){
+            throw new BusinessException(ErrorCode.SYSTEM_ERROR,"接口不可调用");
+        }
+        InterfaceInfo newInterfaceInfo = new InterfaceInfo();
+        newInterfaceInfo.setId(id);
+        newInterfaceInfo.setStatus(StatusEnum.CLOSED.getStatus());
+        boolean result = interfaceInfoService.updateById(newInterfaceInfo);
+        return ResultUtils.success(result);
+    }
+
+    @PostMapping("/invoke")
+    public BaseResponse<Object> invokeInterfaceInfo(@RequestBody InterfaceInfoInvokeRequest interfaceInfoInvokeRequest,HttpServletRequest request) {
+        if (interfaceInfoInvokeRequest == null || interfaceInfoInvokeRequest.getId() <= 0) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        //接口id
+        Long id = interfaceInfoInvokeRequest.getId();
+        //接口参数
+        String requestParams = interfaceInfoInvokeRequest.getRequestParams();
+        //利用service查询接口信息
+        InterfaceInfo interfaceInfo = interfaceInfoService.getById(id);
+        //如果接口信息为空，抛出不存在异常
+        if(interfaceInfo==null){
+            throw new BusinessException(ErrorCode.NOT_FOUND_ERROR);
+        }
+        //如果接口关闭，抛出系统异常
+        if(StatusEnum.CLOSED.getStatus()==interfaceInfo.getStatus()){
+            throw new BusinessException(ErrorCode.SYSTEM_ERROR,"接口已关闭");
+        }
+        //直接从session中获取用户的ak、sk
+        User loginUser = userService.getLoginUser(request);
+        String accessKey = loginUser.getAccessKey();
+        String secretKey = loginUser.getSecretKey();
+        //创建一个Gson对象，将json字符串转换为object对象
+        Gson gson = new Gson();
+        com.dsk.kongapiclientsdk.model.User user = gson.fromJson(requestParams, com.dsk.kongapiclientsdk.model.User.class);
+        //创建一个临时的KongApiClient对象，传入用户的ak和sk
+        KongApiClient  tempClient= new KongApiClient(accessKey, secretKey);
+        String userName = tempClient.getUserNameByPost(user);
+        return ResultUtils.success(userName);
+    }
+
+    @PostMapping("/getById")
+    public BaseResponse<InterfaceInfo> getInterfaceInfoById(@RequestBody IdRequest idRequest){
+        if (idRequest == null || idRequest.getId() <= 0) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        //接口id
+        Long id = idRequest.getId();
+        //利用service查询接口信息
+        InterfaceInfo interfaceInfo = interfaceInfoService.getById(id);
+        if(interfaceInfo==null){
+            throw new BusinessException(ErrorCode.NOT_FOUND_ERROR);
+        }
+        return ResultUtils.success(interfaceInfo);
     }
 
     /**
      * 分页获取列表
      *
      * @param interfaceInfoQueryRequest
-     * @param request
      * @return
      */
     @GetMapping("/list/page")
-    public BaseResponse<Page<InterfaceInfo>> listInterfaceInfoByPage(InterfaceInfoQueryRequest interfaceInfoQueryRequest, HttpServletRequest request) {
+    public BaseResponse<Page<InterfaceInfo>> listInterfaceInfoByPage(InterfaceInfoQueryRequest interfaceInfoQueryRequest) {
         if (interfaceInfoQueryRequest == null) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }

@@ -2,7 +2,7 @@ package com.dsk.project.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.dsk.project.model.entity.User;
+import com.dsk.kongapicommon.model.entity.User;
 import com.dsk.project.model.dto.user.UserQueryRequest;
 import com.dsk.project.model.vo.LoginUserVO;
 import com.dsk.project.model.vo.UserVO;

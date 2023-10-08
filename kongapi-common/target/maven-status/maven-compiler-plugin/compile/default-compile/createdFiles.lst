@@ -1,0 +1,6 @@
+com\dsk\kongapicommon\model\entity\InterfaceInfo.class
+com\dsk\kongapicommon\model\entity\UserInterfaceInfo.class
+com\dsk\kongapicommon\service\InnerInterfaceInfoService.class
+com\dsk\kongapicommon\service\InnerUserInterfaceInfoService.class
+com\dsk\kongapicommon\service\InnerUserService.class
+com\dsk\kongapicommon\model\entity\User.class

@@ -9,7 +9,7 @@ import com.dsk.project.common.ResultUtils;
 import com.dsk.project.constant.UserConstant;
 import com.dsk.project.exception.BusinessException;
 import com.dsk.project.exception.ThrowUtils;
-import com.dsk.project.model.entity.User;
+import com.dsk.kongapicommon.model.entity.User;
 import com.dsk.project.service.UserService;
 import com.dsk.project.model.dto.user.UserAddRequest;
 import com.dsk.project.model.dto.user.UserLoginRequest;

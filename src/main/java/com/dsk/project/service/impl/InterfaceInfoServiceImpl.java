@@ -5,7 +5,7 @@ import com.dsk.project.common.ErrorCode;
 import com.dsk.project.exception.BusinessException;
 import com.dsk.project.exception.ThrowUtils;
 import com.dsk.project.mapper.InterfaceInfoMapper;
-import com.dsk.project.model.entity.InterfaceInfo;
+import com.dsk.kongapicommon.model.entity.InterfaceInfo;
 import com.dsk.project.service.InterfaceInfoService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;

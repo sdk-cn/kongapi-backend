@@ -3,7 +3,7 @@ package com.dsk.project.aop;
 import com.dsk.project.annotation.AuthCheck;
 import com.dsk.project.common.ErrorCode;
 import com.dsk.project.exception.BusinessException;
-import com.dsk.project.model.entity.User;
+import com.dsk.kongapicommon.model.entity.User;
 import com.dsk.project.service.UserService;
 import com.dsk.project.model.enums.UserRoleEnum;
 

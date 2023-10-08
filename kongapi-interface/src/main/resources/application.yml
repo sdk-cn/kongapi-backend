@@ -1,0 +1,7 @@
+server:
+  port: 8103
+  servlet:
+    context-path: /api
+kongapi:
+  access-key: wangliangxi
+  secret-key: loveu

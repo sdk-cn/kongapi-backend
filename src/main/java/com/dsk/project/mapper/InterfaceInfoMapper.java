@@ -1,7 +1,7 @@
 package com.dsk.project.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.dsk.project.model.entity.InterfaceInfo;
+import com.dsk.kongapicommon.model.entity.InterfaceInfo;
 
 /**
 * @author Administrator

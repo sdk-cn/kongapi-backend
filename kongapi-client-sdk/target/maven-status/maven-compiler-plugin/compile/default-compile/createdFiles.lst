@@ -1,0 +1,5 @@
+com\dsk\kongapiclientsdk\KongApiClientConfig.class
+com\dsk\kongapiclientsdk\utils\SignUtils.class
+com\dsk\kongapiclientsdk\client\KongApiClient.class
+META-INF\spring-configuration-metadata.json
+com\dsk\kongapiclientsdk\model\User.class

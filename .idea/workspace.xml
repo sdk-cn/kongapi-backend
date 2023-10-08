@@ -4,11 +4,69 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d753b34-bfc0-4890-9157-77eca16bcf94" name="Changes" comment="" />
+    <list default="true" id="6d753b34-bfc0-4890-9157-77eca16bcf94" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/create_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/create_table.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dsk/project/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dsk/project/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dsk/project/aop/AuthInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dsk/project/aop/AuthInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dsk/project/controller/InterfaceInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dsk/project/controller/InterfaceInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dsk/project/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dsk/project/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dsk/project/mapper/InterfaceInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dsk/project/mapper/InterfaceInfoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dsk/project/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dsk/project/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dsk/project/model/dto/user/UserQueryRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dsk/project/model/dto/user/UserQueryRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dsk/project/model/entity/InterfaceInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dsk/project/model/entity/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dsk/project/service/InterfaceInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dsk/project/service/InterfaceInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dsk/project/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dsk/project/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dsk/project/service/impl/InterfaceInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dsk/project/service/impl/InterfaceInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dsk/project/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dsk/project/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/InterfaceInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/InterfaceInfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/spring-configuration-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dsk/project/MainApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dsk/project/MainApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dsk/project/aop/AuthInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dsk/project/aop/AuthInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dsk/project/controller/InterfaceInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dsk/project/controller/InterfaceInfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dsk/project/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dsk/project/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dsk/project/mapper/InterfaceInfoMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dsk/project/mapper/InterfaceInfoMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dsk/project/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dsk/project/mapper/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dsk/project/model/dto/user/UserQueryRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dsk/project/model/dto/user/UserQueryRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dsk/project/model/entity/InterfaceInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dsk/project/model/entity/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dsk/project/service/InterfaceInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dsk/project/service/InterfaceInfoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dsk/project/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dsk/project/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dsk/project/service/impl/InterfaceInfoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dsk/project/service/impl/InterfaceInfoServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dsk/project/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dsk/project/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/InterfaceInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/InterfaceInfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/kds/project/MainApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/kds/project/esdao/PostEsDaoTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/kds/project/manager/CosManagerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/kds/project/mapper/PostFavourMapperTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/kds/project/mapper/PostMapperTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/kds/project/service/PostFavourServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/kds/project/service/PostServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/kds/project/service/PostThumbServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/kds/project/service/UserServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/kds/project/utils/EasyExcelTest.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -26,6 +84,9 @@
     <option name="skipTests" value="true" />
   </component>
   <component name="ProjectId" id="2S3Mf8kIOxt83RV2rlChviYBnUb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -39,12 +100,14 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Projects/user-center-backend&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projects/kongapi-backend&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
     &quot;show.run.dashboard.notification&quot;: &quot;false&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;f1603966ca6ffb6f77aa4b5bb44e5ba3&quot;
   },
@@ -61,16 +124,29 @@
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.dsk.project.service.impl" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\kongapi-backend" />
       <recent name="D:\Projects\kongapi-backend\src\main\java\com\dsk\project\config" />
       <recent name="D:\Projects\kongapi-backend\src\main\java\com\dsk\project\model\dto\interfaceinfo" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\kongapi-backend" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.dsk.project.service" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.dsk.project.model.vo" />
+      <recent name="com.dsk.project.model.dto.userinterfaceinfo" />
+      <recent name="com.dsk.project.model.dto.userInterfaceInfo" />
       <recent name="com.dsk.project.controller" />
       <recent name="com.dsk.project.service" />
-      <recent name="com.dsk.project.service.impl" />
-      <recent name="com.dsk.project.mapper" />
-      <recent name="com.dsk.project.model.entity" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.MainApplication">
@@ -79,6 +155,22 @@
       <script-mode>FILE</script-mode>
       <data-source id="843ebe62-f34a-4341-b963-ec5e82e9fe9e" />
       <method v="2" />
+    </configuration>
+    <configuration name="UserInterfaceInfoServiceTest.invokeCount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kongapi-backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dsk.project.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.dsk.project.service" />
+      <option name="MAIN_CLASS_NAME" value="com.dsk.project.service.UserInterfaceInfoServiceTest" />
+      <option name="METHOD_NAME" value="invokeCount" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="MainApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="kongapi-backend" />
@@ -95,11 +187,13 @@
     </configuration>
     <list>
       <item itemvalue="Database Script.create_table.sql" />
+      <item itemvalue="JUnit.UserInterfaceInfoServiceTest.invokeCount" />
       <item itemvalue="Spring Boot.MainApplication" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.MainApplication" />
+        <item itemvalue="JUnit.UserInterfaceInfoServiceTest.invokeCount" />
         <item itemvalue="Database Script.create_table.sql" />
       </list>
     </recent_temporary>
@@ -120,11 +214,43 @@
       <workItem from="1695106635340" duration="7553000" />
       <workItem from="1695116080770" duration="2876000" />
       <workItem from="1695119434299" duration="2627000" />
-      <workItem from="1695194515594" duration="11745000" />
+      <workItem from="1695194515594" duration="11747000" />
+      <workItem from="1695263802481" duration="15491000" />
+      <workItem from="1695472268255" duration="1561000" />
+      <workItem from="1695530430000" duration="4161000" />
+      <workItem from="1695536541428" duration="6964000" />
+      <workItem from="1695720236889" duration="601000" />
+      <workItem from="1696038497159" duration="5049000" />
+      <workItem from="1696044734250" duration="9073000" />
+      <workItem from="1696074478064" duration="7492000" />
+      <workItem from="1696642665671" duration="1298000" />
+      <workItem from="1696730245053" duration="64000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/dsk/project/controller/InterfaceInfoController.java</url>
+          <line>242</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
