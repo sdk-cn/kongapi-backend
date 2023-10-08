@@ -18,9 +18,9 @@ spring:
   # todo 需替换配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://175.24.180.170:3306/kongapi
+    url: jdbc:mysql://localhost：3306/kongapi
     username: root
-    password: kds981216
+    password: 123456
   # 文件上传
   servlet:
     multipart:
